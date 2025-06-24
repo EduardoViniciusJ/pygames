@@ -3,5 +3,8 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.13 (pygames)" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (pygames-main)" project-jdk-type="Python SDK" />
+=======
+>>>>>>> 9012de7d3f4377e72ae23a83f81f148bdab026f0
 </project>

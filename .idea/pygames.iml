@@ -4,7 +4,11 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.13 (pygames-main)" jdkType="Python SDK" />
+=======
+    <orderEntry type="jdk" jdkName="Python 3.13 (pygames)" jdkType="Python SDK" />
+>>>>>>> 9012de7d3f4377e72ae23a83f81f148bdab026f0
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
