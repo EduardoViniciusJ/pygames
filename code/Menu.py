@@ -22,7 +22,7 @@ class Menu:
             for ent in self.entity_list:
                 self.screen.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
-            self.menu_text(text_size=100, text='AimRushZombie', text_color=C_CYAN, text_center_pos=(300, 50))
+            self.menu_text(text_size=60, text='AimRushZombie', text_color=C_WHITE, text_center_pos=(300, 50))
             for i in range(len(MENU_OPTIONS)):
                 if i == menu_options:
                     self.menu_text(50, MENU_OPTIONS[i], C_BLACK, (W_WIDTH / 2, 140 + 40 * i))
