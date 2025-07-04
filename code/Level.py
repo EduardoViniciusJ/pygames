@@ -20,7 +20,7 @@ class Level:
         self.entity_list.extend(EntityFactory.get_entity('bg'))
         self.entity_list.append(EntityFactory.get_entity('p'))
 
-        pygame.time.set_timer(EVENT_ENEMY, 2000)
+        pygame.time.set_timer(EVENT_ENEMY, 500)
 
     def run(self):
         clock = pygame.time.Clock()
@@ -52,6 +52,18 @@ class Level:
             self.level_text(text_size=25, text='DIREITO: D', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 25))
             self.level_text(text_size=25, text='ESQUERDA: A', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 40))
             self.level_text(text_size=25, text='ATIRAR: L', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 55))
+
+            #Counter bullets
+            for ent in self.entity_list:
+                if isinstance(ent, Player):
+                    ammo_text, ammo_color = ent.get_status_ammo() # oq seria isso aqui pq chama ammo_text, ammo_color
+                    self.level_text(
+                        text_size=25,
+                        text=ammo_text,
+                        text_color=ammo_color,
+                        text_position=(10, W_HEIGHT / 15 + 70)
+                    )
+
             pygame.display.flip()
 
             EntityMediator.verify_collision(entity_list=self.entity_list)

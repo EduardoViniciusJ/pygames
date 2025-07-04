@@ -40,15 +40,15 @@ ENTITY_MENU = {
 
 # SPEED ENEMY
 ENTITY_ENEMY = {
-    'z0': 2,
-    'z1': 1
+    'z0': 4,
+    'z1': 2
 }
 # SPAWNER ENEMIES
-EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_ENEMY = pygame.USEREVENT + 10
 
 # HEALTH
 ENTITY_HEALTH = {
-    'z0': 1,
+    'z0': 2,
     'z1': 1,
     'p': 1,
     'bg0': 1000,
@@ -64,4 +64,19 @@ ENTITY_HEALTH = {
 # SPEED SHOT
 ENTITY_SHOT = {
     'shot': 10
+}
+
+# DEMAGE
+ENTITY_DEMAGE = {
+    'z0': 1,
+    'z1': 1,
+    'p': 1,
+    'bg0': 0,
+    'bg2': 0,
+    'bg1': 0,
+    'm0': 0,
+    'm1': 0,
+    'm2': 0,
+    'm3': 0,
+    'shot': 1,
 }

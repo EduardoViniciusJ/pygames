@@ -49,7 +49,7 @@ class Player(Entity):
     def shoot(self, event):
         timer = pygame.time.get_ticks()
 
-        # Se já atirou 15 vezes, precisa esperar recarregar
+        # Se já atirou 15 vezez precisa esperar recarregar
         if self.shots_fired >= 15:
             if timer - self.last_reload_time >= self.reload_delay:
                 self.shots_fired = 0
@@ -64,5 +64,11 @@ class Player(Entity):
                 self.last_reload_time = timer
 
             return PlayerShot('shot', position=(self.rect.centerx, self.rect.centery))
-
         return None
+
+    def get_status_ammo(self):
+        timer = pygame.time.get_ticks()
+        if self.shots_fired >= 15 and (timer - self.last_reload_time < self.reload_delay):
+            return "Recarregando...", (255, 0, 0)
+        else:
+            return f"Munição: {15 - self.shots_fired} / 15", (255, 255, 255)
