@@ -10,7 +10,7 @@ class EntityFactory:
         match entity_name:
             case 'bg':
                 list_bg = []
-                for layer in ['bg0', 'bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6']:
+                for layer in ['bg0', 'bg1', 'bg2']:
                     list_bg.append(Background(layer, (0,0)))
                     list_bg.append(Background(layer, (W_WIDTH,0)))
                 return list_bg

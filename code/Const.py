@@ -25,17 +25,13 @@ C_GOLD = 255, 215, 0
 # SPEED BACKGROUND
 ENTITY_JOGO = {
     'bg0': 0,
-    'bg2': 1,
-    'bg1': 2,
-    'bg4': 3,
-    'bg3': 4,
-    'bg5': 5,
-    'bg6': 6,
+    'bg2': 0.5,
+    'bg1': 1,
 }
 # SPEED BACKGROUND
 ENTITY_MENU = {
     'm0': 0,
-    'm1': 1,
-    'm2': 2,
-    'm3': 3,
+    'm1': 0.5,
+    'm2': 0.6,
+    'm3': 0.7,
 }
