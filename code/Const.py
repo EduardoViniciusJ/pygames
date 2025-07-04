@@ -58,5 +58,10 @@ ENTITY_HEALTH = {
     'm1': 1000,
     'm2': 1000,
     'm3': 1000,
+    'shot': 1,
+}
 
+# SPEED SHOT
+ENTITY_SHOT = {
+    'shot': 10
 }
