@@ -8,8 +8,8 @@ class Player(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
         self.speed = 2
-        self.jump_speed = -14
-        self.gravity = 1
+        self.jump_speed = -16
+        self.gravity = 0.85
         self.vel_y = 0
         self.is_jumping = False
         self.ground_y = position[1]

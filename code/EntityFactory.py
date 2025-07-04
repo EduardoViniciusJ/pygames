@@ -1,6 +1,7 @@
 from code.Background import Background
 from code.BackgroundMenu import BackgroundMenu
 from code.Const import W_WIDTH, W_HEIGHT
+from code.Enemy import Enemy
 from code.Player import Player
 
 class EntityFactory:
@@ -22,3 +23,7 @@ class EntityFactory:
                 return list_m
             case 'p':
                 return Player('p', (10, W_HEIGHT / 2 + 90))
+            case 'z0':
+                return Enemy('z0', (W_WIDTH + 10, W_HEIGHT / 2 + 100))
+            case 'z1':
+                return Enemy('z1', (W_WIDTH + 10, W_HEIGHT / 2 + 100))

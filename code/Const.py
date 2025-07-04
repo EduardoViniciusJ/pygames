@@ -1,4 +1,6 @@
 # SCREEN
+import pygame
+
 W_WIDTH = 576
 W_HEIGHT = 324
 
@@ -35,3 +37,12 @@ ENTITY_MENU = {
     'm2': 0.6,
     'm3': 0.7,
 }
+
+# SPEED ENEMY
+ENTITY_ENEMY = {
+    'z0': 2,
+    'z1': 1
+}
+
+EVENT_ENEMY = pygame.USEREVENT + 1
+
