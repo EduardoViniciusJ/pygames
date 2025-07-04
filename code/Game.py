@@ -8,6 +8,7 @@ class Game:
     def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode(size=(W_WIDTH, W_HEIGHT))
+        pygame.display.set_caption("Aim Rush Zombie")
 
     def run(self):
         while True:
