@@ -30,6 +30,10 @@ class Level:
                     pygame.quit()
                     quit()
             self.level_text(text_size=25, text=f'FPS: {clock.get_fps() :.0f}', text_color=C_WHITE, text_position=(10, W_HEIGHT / 22))
+            self.level_text(text_size=25, text='PULAR: W', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 10))
+            self.level_text(text_size=25, text='DIREITO: D', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 25))
+            self.level_text(text_size=25, text='ESQUERDA: A', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 40))
+            self.level_text(text_size=25, text='ATIRAR: L', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 55))
             pygame.display.flip()
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_position: tuple):
