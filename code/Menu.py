@@ -2,27 +2,32 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import C_BLACK, W_WIDTH, MENU_OPTIONS, C_WHITE, C_BLUE, C_RED
+from code.Const import C_BLACK, W_WIDTH, MENU_OPTIONS, C_WHITE, C_BLUE, C_RED, C_GREEN, C_GOLD, C_CYAN
+from code.EntityFactory import EntityFactory
 
 
 class Menu:
     def __init__(self, screen):
-        self.screen = screen # tela principal do jogo
-        self.surf = pygame.image.load('./assets/menu.png')
-        self.rect = self.surf.get_rect(left=0, top=0)
+        self.screen = screen
+        self.entity_list = []
+        self.entity_list.extend(EntityFactory.get_entity('m'))
 
     def run(self):
         menu_options = 0
         pygame.mixer_music.load('./assets/menu.mp3')
         pygame.mixer_music.play(-1)
+
         while True:
-            self.screen.blit(self.surf, self.rect)
-            self.menu_text(text_size=100, text='AimRushZombie', text_color=C_WHITE, text_center_pos=(300, 50))
+            self.screen.fill(C_BLACK)
+            for ent in self.entity_list:
+                self.screen.blit(source=ent.surf, dest=ent.rect)
+                ent.move()
+            self.menu_text(text_size=100, text='AimRushZombie', text_color=C_CYAN, text_center_pos=(300, 50))
             for i in range(len(MENU_OPTIONS)):
                 if i == menu_options:
-                    self.menu_text(80, MENU_OPTIONS[i], C_RED, (W_WIDTH / 2, 300 + 80 * i))
+                    self.menu_text(50, MENU_OPTIONS[i], C_BLACK, (W_WIDTH / 2, 140 + 40 * i))
                 else:
-                    self.menu_text(80, MENU_OPTIONS[i], C_WHITE, (W_WIDTH / 2, 300 + 80 * i))
+                    self.menu_text(50, MENU_OPTIONS[i], C_WHITE, (W_WIDTH / 2, 140 + 40 * i))
 
             pygame.display.flip()
 
