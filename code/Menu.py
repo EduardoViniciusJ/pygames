@@ -14,7 +14,7 @@ class Menu:
 
     def run(self):
         menu_options = 0
-        pygame.mixer_music.load('./assets/menu.mp3')
+        pygame.mixer_music.load('./assets/music.mp3')
         pygame.mixer_music.play(-1)
 
         while True:
