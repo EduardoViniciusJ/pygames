@@ -9,6 +9,7 @@ from pygame.locals import Rect
 from code.Const import C_WHITE, W_HEIGHT, EVENT_ENEMY
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
+from code.EntityMediator import EntityMediator
 
 
 class Level:
@@ -20,7 +21,7 @@ class Level:
         self.entity_list.extend(EntityFactory.get_entity('bg'))
         self.entity_list.append(EntityFactory.get_entity('p'))
 
-        pygame.time.set_timer(EVENT_ENEMY, 4000)
+        pygame.time.set_timer(EVENT_ENEMY, 2000)
 
 
     def run(self):
@@ -45,6 +46,10 @@ class Level:
             self.level_text(text_size=25, text='ESQUERDA: A', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 40))
             self.level_text(text_size=25, text='ATIRAR: L', text_color=C_WHITE, text_position=(10, W_HEIGHT / 15 + 55))
             pygame.display.flip()
+
+
+            EntityMediator.verify_collision(entity_list=self.entity_list)
+            EntityMediator.verify_health(entity_list=self.entity_list)
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_position: tuple):
         text_font: Font = pygame.font.SysFont(None, text_size)

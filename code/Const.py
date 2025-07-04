@@ -43,6 +43,20 @@ ENTITY_ENEMY = {
     'z0': 2,
     'z1': 1
 }
-
+# SPAWNER ENEMIES
 EVENT_ENEMY = pygame.USEREVENT + 1
 
+# HEALTH
+ENTITY_HEALTH = {
+    'z0': 1,
+    'z1': 1,
+    'p': 1,
+    'bg0': 1000,
+    'bg2': 1000,
+    'bg1': 1000,
+    'm0': 1000,
+    'm1': 1000,
+    'm2': 1000,
+    'm3': 1000,
+
+}
