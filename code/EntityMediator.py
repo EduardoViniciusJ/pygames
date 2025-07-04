@@ -6,6 +6,7 @@ from code.PlayerShot import PlayerShot
 
 
 class EntityMediator:
+    killed_enemies  = 0
 
     @staticmethod
     def verify_collision_window(ent: Entity):
@@ -31,6 +32,7 @@ class EntityMediator:
                 entity2 = entity_list[j]
                 EntityMediator.verify_collision_entity(entity1, entity2)
 
+    #Verifica a colisão entre tiros, zombies e player
     @staticmethod
     def verify_collision_entity(ent1 , ent2):
         valid_interaction = False
@@ -51,7 +53,13 @@ class EntityMediator:
                 ent1.health -= ent2.damage
                 ent2.health -= ent1.damage
 
-
-
+    #Verifica e contabiliza cada kill
+    @staticmethod
+    def verify_health(entity_list: [Entity]):
+        for ent in entity_list[:]:
+            if ent.health <= 0:
+                if isinstance(ent, Enemy):
+                    EntityMediator.killed_enemies += 1
+                entity_list.remove(ent)
 
 
