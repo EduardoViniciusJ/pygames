@@ -19,6 +19,10 @@ class Player(Entity):
         self.last_reload_time = 0
         self.reload_delay = 1000
 
+        # Carregar o som do tiro apenas uma vez
+        self.tiro_som = pygame.mixer.Sound('./assets/tiro.mp3')
+        self.tiro_som.set_volume(0.3)
+
     def move(self):
         keys = pygame.key.get_pressed()
 
@@ -49,21 +53,22 @@ class Player(Entity):
     def shoot(self, event):
         timer = pygame.time.get_ticks()
 
-        # Se já atirou 15 vezez precisa esperar recarregar
+        # Se já atirou 15 vezes, precisa esperar recarregar
         if self.shots_fired >= 15:
             if timer - self.last_reload_time >= self.reload_delay:
                 self.shots_fired = 0
             else:
-                # Ainda recarregando, não atira
-                return None
+                return None  # Ainda recarregando, não atira
 
         if event.type == pygame.KEYDOWN and event.key == pygame.K_l:
-            self.shots_fired += 1  #  contador de tiros
+            self.shots_fired += 1
+            self.tiro_som.play()  # Reproduz som de tiro
 
             if self.shots_fired == 15:
                 self.last_reload_time = timer
 
             return PlayerShot('shot', position=(self.rect.centerx, self.rect.centery))
+
         return None
 
     def get_status_ammo(self):
